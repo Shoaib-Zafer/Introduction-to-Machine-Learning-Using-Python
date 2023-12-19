@@ -1,5 +1,7 @@
 # Below Libraries need to be installed for the code to function properly
-# !pip install works in Jupyter Lab for other IDEs use the command pip install in command prompt  
+# !pip install works in Jupyter Lab for other IDEs use the command pip install in command prompt
+# for example in order to install numpy using command prompt use following command 
+# pip install numpy  
 
 !pip install numpy
 from gettext import install
