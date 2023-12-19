@@ -106,3 +106,5 @@ print("Test set predictions:\n {}".format(y_pred))
 #   This score provides an objective measure of the model's generalization ability on unseen data.
 
 print("Test set score: {:.2f}".format(knn.score(X_test, y_test)))
+
+# This KNN Model has got accuracy of 97 %
