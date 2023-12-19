@@ -3,8 +3,10 @@
 # for example in order to install numpy using command prompt use following command 
 # pip install numpy  
 
+!pip install mglearn
+
+
 !pip install numpy
-from gettext import install
 import numpy as np
 print("NumPy version: {}".format(np.__version__))
 
