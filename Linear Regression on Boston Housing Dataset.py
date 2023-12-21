@@ -39,8 +39,8 @@ print("Number of Coefficients retuned by Linear Regression:{}".format(lr_coeffic
 
 print("Intercepts Returned by Linear Regrssion:{}".format(lr_intercept))
 
-print("Training set Accuracy: {:.2f}".format(lr.score(X_train, y_train)))
-print("Test set Accuracy: {:.2f}".format(lr.score(X_test, y_test)))
+print("Training set Accuracy: {:.2f}".format(lr.score(X_train, y_train))) # Computes Accuracy of the predictions in Training Data
+print("Test set Accuracy: {:.2f}".format(lr.score(X_test, y_test))) # # Computes Accuracy of the predictions in Test Data
 
 # The observed discrepancy between training and test set performance indicates overfitting in our linear regression model. 
 # To address this issue and control model complexity, we should explore alternative approaches like ridge regression.
