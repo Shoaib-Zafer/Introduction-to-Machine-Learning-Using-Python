@@ -14,6 +14,10 @@ from sklearn.model_selection import train_test_split
 
 from sklearn.linear_model import LinearRegression
 
+# Imports Ridge regression library 
+
+from sklearn.linear_model import Ridge
+
 
 #Boston Housing dataset has 506 samples and 105 derived features the target is median house price which we want to predict based on these features
  
@@ -44,3 +48,22 @@ print("Test set Accuracy: {:.2f}".format(lr.score(X_test, y_test))) # # Computes
 
 # The observed discrepancy between training and test set performance indicates overfitting in our linear regression model. 
 # To address this issue and control model complexity, we should explore alternative approaches like ridge regression.
+
+#Ridge regression is a regularization technique applied within linear regression frameworks to mitigate overfitting and enhance model generalizability. 
+#While it employs the same prediction formula as ordinary least squares, it introduces an L2 regularization term to the loss function. 
+#This term penalizes large coefficient values, effectively constraining model complexity and promoting coefficient shrinkage towards zero.
+
+#The objective of ridge regression is to strike an optimal balance between predictive performance on the training data and model simplicity.
+# By attenuating the influence of individual features, it reduces the risk of overfitting and fosters models that generalize more effectively to unseen data. 
+# This makes ridge regression a valuable tool for constructing robust and dependable predictive models, particularly in scenarios where feature multicollinearity 
+# or high-dimensionality pose challenges.
+
+ridge_model=Ridge().fit(X_train,y_train) #Instantiates a Ridge regression model object.Trains the model using the training data, uncovering patterns and relationships between features and target.
+
+print("Training set Accuracy: {:.2f}".format(ridge_model.score(X_train, y_train))) # Computes Accuracy of the predictions in Training Data
+print("Test set Accuracy: {:.2f}".format(ridge_model.score(X_test, y_test))) # Computes Accuracy of the predictions in Training Data
+
+# The observed discrepancy in scores lower on the training set but higher on the test set affirms Ridge regression's effectiveness in combating overfitting. 
+# While its restrained nature might slightly compromise performance on training data, it yields superior generalization to unseen data, a hallmark of robust predictive models. 
+# This preference for generalization cements Ridge regression as the model of choice over LinearRegression in this context.
+
