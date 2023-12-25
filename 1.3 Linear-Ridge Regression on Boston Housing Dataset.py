@@ -66,4 +66,4 @@ print("Test set Accuracy: {:.2f}".format(ridge_model.score(X_test, y_test))) # C
 # The observed discrepancy in scores lower on the training set but higher on the test set affirms Ridge regression's effectiveness in combating overfitting. 
 # While its restrained nature might slightly compromise performance on training data, it yields superior generalization to unseen data, a hallmark of robust predictive models. 
 # This preference for generalization cements Ridge regression as the model of choice over LinearRegression in this context.
-#Here, alpha=0.1 seems to be working well
+# Here, alpha=0.1 seems to be working well. We could try decreasing alpha even more to improve generalization
