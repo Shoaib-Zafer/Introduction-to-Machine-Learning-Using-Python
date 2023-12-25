@@ -67,4 +67,24 @@ print("Test set Accuracy of Ridge Regression with Alpha= 1.0 : {:.2f}".format(ri
 # While its restrained nature might slightly compromise performance on training data, it yields superior generalization to unseen data, a hallmark of robust predictive models. 
 # This preference for generalization cements Ridge regression as the model of choice over LinearRegression in this context.
 
-# testing 123 
+# The Ridge model makes a trade-off between the simplicity of the model (near-zero
+#coefficients) and its performance on the training set. How much importance the
+#model places on simplicity versus training set performance can be specified by the
+#user, using the alpha parameter. In the previous example, we used the default parameter
+#alpha=1.0. There is no reason why this will give us the best trade-off, though.
+#The optimum setting of alpha depends on the particular dataset we are using.
+#Increasing alpha forces coefficients to move more toward zero, which decreases
+#training set performance but might help generalization
+
+ridge10 = Ridge(alpha=10).fit(X_train, y_train)
+print("Training set score of Ridge Regession with Alpha =10: {:.2f}".format(ridge10.score(X_train, y_train)))
+print("Test set score of Ridge Regession with Alpha =10: {:.2f}".format(ridge10.score(X_test, y_test)))
+
+#Decreasing alpha allows the coefficients to be less restricted. For very small values of alpha, coefficients are barely restricted at all,
+# and we end up with a model that resembles LinearRegression:
+
+ridge01 = Ridge(alpha=0.1).fit(X_train, y_train)
+print("Training set score of Ridge Regession with Alpha =0.1: {:.2f}".format(ridge01.score(X_train, y_train)))
+print("Testing set score of Ridge Regession with Alpha =0.1: {:.2f}".format(ridge01.score(X_test, y_test)))z
+
+# Here, alpha=0.1 seems to be working well. We could try decreasing alpha even more to improve generalization.
