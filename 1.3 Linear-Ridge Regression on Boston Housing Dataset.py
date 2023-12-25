@@ -88,3 +88,6 @@ print("Testing Set Accuracy of Ridge Regression with Alpha= 10 : {:.2f}".format 
 ridge_model01= Ridge(alpha=0.1).fit(X_train,y_train) # Here we set value of Alpha =0.1 
 print("Training Set Accuracy of Ridge Regression with Alpha= 0.1 : {:.2f}".format (ridge_model01.score(X_train,y_train)))
 print("Testing Set Accuracy of Ridge Regression with Alpha= 0.1 : {:.2f}".format (ridge_model01.score(X_test,y_test)))   
+
+
+# Here, alpha=0.1 seems to be working well. We could try decreasing alpha even more to improve generalization
