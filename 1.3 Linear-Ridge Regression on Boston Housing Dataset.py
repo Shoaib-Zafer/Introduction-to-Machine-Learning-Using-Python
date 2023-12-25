@@ -88,3 +88,4 @@ print("Training set score of Ridge Regession with Alpha =0.1: {:.2f}".format(rid
 print("Testing set score of Ridge Regession with Alpha =0.1: {:.2f}".format(ridge01.score(X_test, y_test)))z
 
 # Here, alpha=0.1 seems to be working well. We could try decreasing alpha even more to improve generalization
+# Hope you learned something new
