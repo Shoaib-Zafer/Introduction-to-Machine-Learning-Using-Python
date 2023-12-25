@@ -85,7 +85,7 @@ print("Test set score of Ridge Regession with Alpha =10: {:.2f}".format(ridge10.
 
 ridge01 = Ridge(alpha=0.1).fit(X_train, y_train)
 print("Training set score of Ridge Regession with Alpha =0.1: {:.2f}".format(ridge01.score(X_train, y_train)))
-print("Testing set score of Ridge Regession with Alpha =0.1: {:.2f}".format(ridge01.score(X_test, y_test)))z
+print("Testing set score of Ridge Regession with Alpha =0.1: {:.2f}".format(ridge01.score(X_test, y_test)))
 
 # Here, alpha=0.1 seems to be working well. We could try decreasing alpha even more to improve generalization.
 # Hope you learned something new
