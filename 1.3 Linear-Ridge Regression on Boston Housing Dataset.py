@@ -43,8 +43,8 @@ print("Number of Coefficients retuned by Linear Regression:{}".format(lr_coeffic
 
 print("Intercepts Returned by Linear Regrssion:{}".format(lr_intercept))
 
-print("Training set Accuracy: {:.2f}".format(lr.score(X_train, y_train))) # Computes Accuracy of the predictions in Training Data
-print("Test set Accuracy: {:.2f}".format(lr.score(X_test, y_test))) # # Computes Accuracy of the predictions in Test Data
+print("Training set Accuracy of Linear Regression: {:.2f}".format(lr.score(X_train, y_train))) # Computes Accuracy of the predictions in Training Data
+print("Test set Accuracy of Linear Regression : {:.2f}".format(lr.score(X_test, y_test))) # # Computes Accuracy of the predictions in Test Data
 
 # The observed discrepancy between training and test set performance indicates overfitting in our linear regression model. 
 # To address this issue and control model complexity, we should explore alternative approaches like ridge regression.
@@ -60,10 +60,31 @@ print("Test set Accuracy: {:.2f}".format(lr.score(X_test, y_test))) # # Computes
 
 ridge_model=Ridge().fit(X_train,y_train) #Instantiates a Ridge regression model object.Trains the model using the training data, uncovering patterns and relationships between features and target.
 
-print("Training set Accuracy: {:.2f}".format(ridge_model.score(X_train, y_train))) # Computes Accuracy of the predictions in Training Data
-print("Test set Accuracy: {:.2f}".format(ridge_model.score(X_test, y_test))) # Computes Accuracy of the predictions in Training Data
+print("Training set Accuracy of Ridge Regression with Apha =1.0 : {:.2f}".format(ridge_model.score(X_train, y_train))) # Computes Accuracy of the predictions in Training Data
+print("Test set Accuracy of Ridge Regression with Alpha= 1.0 : {:.2f}".format(ridge_model.score(X_test, y_test))) # Computes Accuracy of the predictions in Training Data
 
 # The observed discrepancy in scores lower on the training set but higher on the test set affirms Ridge regression's effectiveness in combating overfitting. 
 # While its restrained nature might slightly compromise performance on training data, it yields superior generalization to unseen data, a hallmark of robust predictive models. 
 # This preference for generalization cements Ridge regression as the model of choice over LinearRegression in this context.
 
+# How Alpha Impact Ridge Regression 
+
+# The Ridge model balances the simplicity of the model (few non-zero coefficients) with its accuracy on the training data. 
+# The user can control the balance between simplicity and training accuracy using the alpha parameter. 
+# The default value of alpha is 1.0, but this may not be the optimal setting for a particular dataset. 
+# Increasing alpha forces the coefficients to be closer to zero, which improves generalization but may reduce training accuracy.
+
+# now we run the ridge regression for different values of Alpha and compare the accuracy results 
+
+
+ridge_model10= Ridge(alpha=10).fit(X_train,y_train) # Here we set value of Alpha =10 which will force the coefficients to become close to zero 
+print("Training Set Accuracy of Ridge Regression with Alpha= 10 : {:.2f}".format (ridge_model10.score(X_train,y_train)))
+print("Testing Set Accuracy of Ridge Regression with Alpha= 10 : {:.2f}".format (ridge_model10.score(X_test,y_test)))     
+
+# performance of the model has decreased by increasing the value of Alpha 
+# Reducing the alpha parameter loosens the constraints on the coefficients. When alpha is very small, the coefficients are barely restricted, 
+# resulting in a model similar to LinearRegression.
+
+ridge_model01= Ridge(alpha=0.1).fit(X_train,y_train) # Here we set value of Alpha =0.1 
+print("Training Set Accuracy of Ridge Regression with Alpha= 0.1 : {:.2f}".format (ridge_model01.score(X_train,y_train)))
+print("Testing Set Accuracy of Ridge Regression with Alpha= 0.1 : {:.2f}".format (ridge_model01.score(X_test,y_test)))   
