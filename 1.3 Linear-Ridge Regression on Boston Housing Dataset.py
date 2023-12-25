@@ -67,3 +67,4 @@ print("Test set Accuracy of Ridge Regression with Alpha= 1.0 : {:.2f}".format(ri
 # While its restrained nature might slightly compromise performance on training data, it yields superior generalization to unseen data, a hallmark of robust predictive models. 
 # This preference for generalization cements Ridge regression as the model of choice over LinearRegression in this context.
 
+# testing 123 
