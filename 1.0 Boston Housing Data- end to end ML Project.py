@@ -31,4 +31,4 @@ def load_housing_data(housing_path=HOUSING_PATH):
 
 fetch_housing_data()
 df= load_housing_data()
-testing 123
+print(df)

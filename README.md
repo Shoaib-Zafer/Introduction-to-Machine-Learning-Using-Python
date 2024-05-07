@@ -7,9 +7,10 @@ This repository contains code and projects developed while working through the b
 ## Contents
 
 Projects:
-1. Classification of Breast Cancer Data using KNN Classification
-2. Linear / Ridge and Lasso Regression for Boston Housing Data
-3. 
+### 1.1 Classifying IRIS Species Using KNN Model 
+This code implements a K-Nearest Neighbors (KNN) classifier to classify Iris flowers based on their sepal and petal measurements. It loads the Iris dataset from scikit-learn, trains the KNN model, and evaluates its performance on unseen data. The model achieves an accuracy of 97% on the test set
+### 2. Linear / Ridge and Lasso Regression for Boston Housing Data
+### 3. 
 ## Dependencies
 
-All the dependencies which need to be isntalled are listed in file 1.1 Libraries to be installed 
+All the dependencies which need to be isntalled are listed in file 1.0 Important Libraries to be installed 
